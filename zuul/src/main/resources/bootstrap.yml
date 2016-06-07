@@ -1,0 +1,32 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: zuul-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 172.20.21.101
+      port: 8500
+
+# Disable Hystrix timeout globally (for all services)
+#hystrix.command.default.execution.timeout.enabled: false
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#hystrix.command.service-a.execution.timeout.enabled: false
+
+# Disable Hystrix timeout for a single service
+#hystrix.command.<serviceName>.execution.timeout.enabled: false
+
+# Increase the Hystrix timeout to 60s (globally)
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+# Increase the Hystrix timeout to 60s (per service)
+#hystrix.command.<serviceName>.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+zuul:
+  routes:
+    a-service:
+      path: /**
+      serviceId: service-a

@@ -1,0 +1,15 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: service-b
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 172.20.21.101
+      port: 8500
+endpoints:
+ shutdown:
+  enabled: true

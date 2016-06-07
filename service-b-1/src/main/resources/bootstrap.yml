@@ -1,0 +1,12 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: service-b
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 172.20.21.101
+      port: 8500
