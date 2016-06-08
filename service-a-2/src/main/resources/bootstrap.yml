@@ -8,5 +8,9 @@ spring:
     consul:
       discovery:
         prefer-ip-address: true
-      host: 172.20.21.101
+      host: 127.0.0.1
       port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
