@@ -1,0 +1,16 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: dashboard
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 127.0.0.1
+      port: 8500
+
+
+turbine:
+  appConfig: service-a,service-b
