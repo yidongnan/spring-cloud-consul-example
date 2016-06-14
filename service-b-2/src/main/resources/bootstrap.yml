@@ -10,6 +10,9 @@ spring:
         prefer-ip-address: true
       host: 127.0.0.1
       port: 8500
+  sleuth:
+      sampler:
+        percentage: 1
 endpoints:
  shutdown:
   enabled: true

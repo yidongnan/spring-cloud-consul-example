@@ -14,3 +14,6 @@ spring:
         enabled: true
         watch:
           enabled: true
+  sleuth:
+      sampler:
+        percentage: 1

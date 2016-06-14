@@ -1,4 +1,5 @@
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.cloud:spring-cloud-starter-consul-all')
+    compile('org.springframework.cloud:spring-cloud-starter-zipkin')
 }

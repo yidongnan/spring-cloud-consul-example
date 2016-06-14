@@ -1,14 +1,11 @@
 package net.devh;
 
 
-import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
 /**
  * User: Michael
@@ -19,23 +16,9 @@ import org.springframework.context.ApplicationContextAware;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class A2ServiceApplication implements ApplicationContextAware {
-    private static ApplicationContext context;
+public class A2ServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(A2ServiceApplication.class, args);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        context = applicationContext;
-    }
-
-    public static <T> T get(Class<T> type) {
-        return context.getBean(type);
-    }
-
-    public static Object get(String name) {
-        return context.getBean(name);
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class B1ServiceApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(B1ServiceApplication.class, args);
     }
