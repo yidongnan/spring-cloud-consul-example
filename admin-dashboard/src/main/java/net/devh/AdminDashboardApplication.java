@@ -1,10 +1,9 @@
 package net.devh;
 
+import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
-import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
  * User: Michael
@@ -12,11 +11,10 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  * Date: 2016/6/8
  */
 @SpringBootApplication
-@EnableHystrixDashboard
-@EnableTurbine
 @EnableDiscoveryClient
-public class DashboardApplication {
+@EnableAdminServer
+public class AdminDashboardApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DashboardApplication.class, args);
+        SpringApplication.run(AdminDashboardApplication.class, args);
     }
 }
