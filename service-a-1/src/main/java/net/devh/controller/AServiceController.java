@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AServiceController {
 
-    @Value("${name:unknow}")
+    @Value("${name:unknown}")
     private String name;
 
     @Autowired
