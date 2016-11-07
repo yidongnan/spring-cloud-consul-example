@@ -1,6 +1,7 @@
 package net.devh;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +19,12 @@ public class ServiceBController {
     @Autowired
     DiscoveryClient discoveryClient;
 
+    @Value("${msg:unknown}")
+    private String msg;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String printServiceB() {
-        System.out.println("IndexController.printServiceB");
         ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();
-        return "Hello World: " + serviceInstance.getServiceId() + ":" + serviceInstance.getHost() + ":" + serviceInstance.getPort();
+        return serviceInstance.getServiceId() + " (" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + ")" + "===>Say " + msg;
     }
 }
