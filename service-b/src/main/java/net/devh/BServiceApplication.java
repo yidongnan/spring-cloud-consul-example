@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * User: Michael
- * Email: zhangyichen@xiaoniu66.com
+ * Email: yidongnan@gmail.com
  * Date: 2016/6/3
  */
 @SpringBootApplication
