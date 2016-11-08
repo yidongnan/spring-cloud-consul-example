@@ -1,0 +1,65 @@
+rabbitmq:
+  image: rabbitmq:3-management
+  ports:
+    - "4369:4369"
+    - "5671:5671"
+    - "5672:5672"
+    - "25672:25672"
+    - "15672:15672"
+
+zipkin:
+  image: openzipkin/zipkin
+  ports:
+    - "9411:9411"
+
+consul:
+  image: consul
+  ports:
+    - "8400:8400"
+    - "8500:8500"
+    - "8600:8600"
+
+service-b:
+  image:  spring-cloud-consul-example/service-b
+  links:
+    - "consul"
+    - "hystrix-dashboard"
+    - "rabbitmq"
+    - "zipkin"
+
+service-a:
+  image:  spring-cloud-consul-example/service-a
+  links:
+    - "consul"
+    - "service-b"
+    - "hystrix-dashboard"
+    - "rabbitmq"
+    - "zipkin"
+
+admin-dashboard:
+  image:  spring-cloud-consul-example/admin-dashboard
+  ports:
+    - "8040:8040"
+  links:
+    - "rabbitmq"
+    - "service-a"
+    - "service-b"
+    - "zuul"
+    - "hystrix-dashboard"
+
+zuul:
+  image:  spring-cloud-consul-example/zuul
+  ports:
+    - "8060:8060"
+  links:
+    - "consul"
+    - "service-a"
+    - "rabbitmq"
+    - "zipkin"
+
+hystrix-dashboard:
+  image:  spring-cloud-consul-example/hystrix-dashboard
+  ports:
+    - "8050:8050"
+  links:
+    - "consul"
