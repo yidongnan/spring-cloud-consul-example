@@ -12,3 +12,20 @@ spring:
       port: 8500
   boot.admin.discovery:
     ignored-services: consul
+
+---
+server:
+  port: 8040
+
+spring:
+  profiles: docker
+  application:
+    name: admin-dashboard
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+  boot.admin.discovery:
+    ignored-services: consul

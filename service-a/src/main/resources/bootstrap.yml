@@ -17,3 +17,24 @@ spring:
   sleuth:
     sampler:
       percentage: 1
+---
+server:
+  port: 8080
+
+spring:
+  profiles: docker
+  application:
+    name: service-a
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
+  sleuth:
+    sampler:
+      percentage: 1

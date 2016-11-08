@@ -13,3 +13,20 @@ spring:
   sleuth:
       sampler:
         percentage: 1
+---
+server:
+  port: 8071
+
+spring:
+  profiles: docker
+  application:
+    name: service-b
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+  sleuth:
+      sampler:
+        percentage: 1

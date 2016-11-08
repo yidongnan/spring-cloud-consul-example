@@ -33,3 +33,26 @@ zuul:
     a-service:
       path: /**
       serviceId: service-a
+---
+server:
+  port: 8060
+
+spring:
+  profiles: docker
+  application:
+    name: zuul-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+  sleuth:
+      sampler:
+        percentage: 1
+
+zuul:
+  routes:
+    a-service:
+      path: /**
+      serviceId: service-a
