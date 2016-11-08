@@ -38,3 +38,5 @@ spring:
   sleuth:
     sampler:
       percentage: 1
+  zipkin:
+    base-url: http://zipkin:9411/
