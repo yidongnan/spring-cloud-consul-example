@@ -46,6 +46,7 @@ admin-dashboard:
     - "service-b"
     - "zuul"
     - "hystrix-dashboard"
+    - "consul"
 
 zuul:
   image:  spring-cloud-consul-example/zuul
