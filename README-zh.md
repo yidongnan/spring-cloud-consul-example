@@ -10,7 +10,7 @@ spring-cloud-consul-example 项目是一个微服务系统的实例
 https://github.com/yidongnan/spring-cloud-netflix-example
 
 ## 技术栈
-* Spring Cloud consul
+* Spring Cloud Consul
 * Spring Cloud Sleuth
 * Spring Cloud Config
 * Spring Boot Admin

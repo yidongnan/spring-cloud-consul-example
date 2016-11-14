@@ -19,7 +19,7 @@ docker-compose scale service-a=2 service-b=3
 ```
 
 ## Technology List
-* Spring Cloud consul
+* Spring Cloud Consul
 * Spring Cloud Sleuth
 * Spring Cloud Config
 * Spring Boot Admin
