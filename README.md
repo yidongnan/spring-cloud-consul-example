@@ -4,7 +4,8 @@ spring-cloud-consul-example is a example for microservices system.
 It contain 
 **configuration management, service discovery, circuit breakers, intelligent routing, distributed tracing, application monitor**.
 
-The registry center uses the consul, if you want to use eureka, you can refer to https://github.com/yidongnan/spring-cloud-netflix-example
+The registry center uses the consul, if you want to use eureka, you can refer to
+https://github.com/yidongnan/spring-cloud-netflix-example
 
 ## Getting Started
 ```shell
