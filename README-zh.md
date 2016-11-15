@@ -6,6 +6,7 @@ Java技术交流群：294712648 <a target="_blank" href="http://shang.qq.com/wpa
 
 spring-cloud-consul-example 项目是一个微服务系统的实例
 项目包括如下功能： **配置管理 、服务发现、熔断,、动态路由、分布式跟踪、应用监控**
+
 注册中心使用的 consul，使用 eureka 的例子可以参考
 https://github.com/yidongnan/spring-cloud-netflix-example
 
@@ -21,7 +22,7 @@ https://github.com/yidongnan/spring-cloud-netflix-example
 
 ## Getting Started
 ```shell
-./gradle clean build -x test
+./gradlew clean build -x test
 ./buildDockerImage.sh
 docker-compose up -d
 ```

@@ -1,4 +1,6 @@
 # spring-cloud-consul-example
+README: [English](https://github.com/yidongnan/spring-cloud-consul-example/blob/master/README.md) | [中文](https://github.com/yidongnan/spring-cloud-consul-example/blob/master/README-zh.md)
+
 spring-cloud-consul-example is a example for microservices system.
 
 It contain 
@@ -9,7 +11,7 @@ https://github.com/yidongnan/spring-cloud-netflix-example
 
 ## Getting Started
 ```shell
-./gradle clean build -x test
+./gradlew clean build -x test
 ./buildDockerImage.sh
 docker-compose up -d
 ```
