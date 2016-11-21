@@ -1,9 +1,9 @@
 # spring-cloud-consul-example
 README: [English](https://github.com/yidongnan/spring-cloud-consul-example/blob/master/README.md) | [中文](https://github.com/yidongnan/spring-cloud-consul-example/blob/master/README-zh.md)
 
-spring-cloud-consul-example is a example for microservices system.
+spring-cloud-consul-example is an example for microservices system.
 
-It contain 
+It's contain 
 **configuration management, service discovery, circuit breakers, intelligent routing, distributed tracing, application monitor**.
 
 The registry center uses the consul, if you want to use eureka, you can refer to
