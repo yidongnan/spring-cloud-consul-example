@@ -19,6 +19,7 @@ https://github.com/yidongnan/spring-cloud-netflix-example
 * ZipKin
 * RabbitMQ
 * Docker
+* Swagger
 
 ## Getting Started
 ```shell
