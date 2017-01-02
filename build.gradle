@@ -4,7 +4,8 @@ buildscript {
         mavenCentral()
     }
     ext {
-        springBootVersion = '1.3.7.RELEASE'
+        springBootVersion = '1.4.2.RELEASE'
+        springCloudVersion = 'Camden.SR3'
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -12,15 +13,11 @@ buildscript {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.11'
-    distributionUrl = "http://crp-public.oss-cn-hangzhou.aliyuncs.com/gradle/gradle-2.11-bin.zip"
+    gradleVersion = '3.0'
 }
 
 repositories {
     mavenLocal()
-    maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
-    maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
-    maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
     mavenCentral()
 }
 
@@ -28,16 +25,13 @@ repositories {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 
     repositories {
         mavenLocal()
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/gradleplugins/" }
-        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
         mavenCentral()
     }
     buildscript {
@@ -47,7 +41,7 @@ subprojects {
         }
         dependencyManagement {
             imports {
-                mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.SR6"
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
             }
         }
     }
