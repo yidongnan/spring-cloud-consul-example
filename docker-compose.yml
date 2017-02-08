@@ -1,12 +1,3 @@
-rabbitmq:
-  image: rabbitmq:3-management
-  ports:
-    - "4369:4369"
-    - "5671:5671"
-    - "5672:5672"
-    - "25672:25672"
-    - "15672:15672"
-
 zipkin:
   image: openzipkin/zipkin
   ports:
@@ -24,7 +15,6 @@ service-b:
   links:
     - "consul"
     - "hystrix-dashboard"
-    - "rabbitmq"
     - "zipkin"
 
 service-a:
@@ -33,7 +23,6 @@ service-a:
     - "consul"
     - "service-b"
     - "hystrix-dashboard"
-    - "rabbitmq"
     - "zipkin"
 
 admin-dashboard:
@@ -41,7 +30,6 @@ admin-dashboard:
   ports:
     - "8040:8040"
   links:
-    - "rabbitmq"
     - "service-a"
     - "service-b"
     - "zuul"
@@ -55,7 +43,6 @@ zuul:
   links:
     - "consul"
     - "service-a"
-    - "rabbitmq"
     - "zipkin"
 
 hystrix-dashboard:

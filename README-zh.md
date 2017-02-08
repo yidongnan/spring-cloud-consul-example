@@ -17,7 +17,6 @@ https://github.com/yidongnan/spring-cloud-netflix-example
 * Spring Boot Admin
 * Spring Boot
 * ZipKin
-* RabbitMQ
 * Docker
 * Swagger
 

@@ -27,7 +27,6 @@ docker-compose scale service-a=2 service-b=3
 * Spring Boot Admin
 * Spring Boot
 * ZipKin
-* RabbitMQ
 * Docker
 * Swagger
 
